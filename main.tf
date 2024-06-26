@@ -31,12 +31,6 @@ vpc_security_group_ids = [aws_security_group.blog.id]
 resource "aws_security_group" "blog" {
     name        = "blog"
     description = "Allow http and https in.  Allow everything out."
-
-<<<<<<< HEAD
-    vcp_id = data.aws_vpc.default.id
-=======
-    vpc_id = data.aws_vpc.default.id
->>>>>>> 81b0ac00a654421cc0918b9afeea6bc1b4d29376
 }
 
 resource "aws_security_group_rule" "blog_http_in" {
