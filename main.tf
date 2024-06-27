@@ -72,13 +72,13 @@ module "alb" {
     }
   ]
 
-   listeners = 
+   http_listeners = [
    {
       port     = 80
       protocol = "HTTP"
     target_group_index = 0
   }
-}
+   ]
 
 module "blog_sg" {
   source  = "terraform-aws-modules/security-group/aws"
