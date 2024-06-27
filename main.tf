@@ -66,7 +66,7 @@ module "alb" {
       name_prefix      = "blog-"
       protocol         = "HTTP"
       port             = 80
-      target_id        = aws_instance.blog.id
+      target_type      = "instance"
     }
     ]
    http_listeners = [
