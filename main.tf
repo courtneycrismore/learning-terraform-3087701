@@ -58,7 +58,7 @@ module "alb" {
   security_groups = [module.blog_sg.security_group_id]
 }
 
-  target_groups = [
+  target_groups = 
     {
       name_prefix      = "blog-"
       backend_protocol = "HTTP"
@@ -71,16 +71,14 @@ module "alb" {
         }
       }
     }
-  ]
-
-   http_listeners = [
+  
+   http_listeners = 
    {
       port     = 80
       protocol = "HTTP"
     target_group_index = 0
   }
-   ]
-
+   
 module "blog_sg" {
   source  = "terraform-aws-modules/security-group/aws"
   version = "5.1.2"
