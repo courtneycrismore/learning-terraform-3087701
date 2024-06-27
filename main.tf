@@ -59,18 +59,16 @@ module "alb" {
 }
     target_groups =[
     {
-    ex-instance = {
       name_prefix      = "blog-"
       protocol         = "HTTP"
       port             = 80
-      target_id      = "aws_instance.blog.id"
+      target_id        = "aws_instance.blog.id"
     }
-  }
     ]
    http_listeners = [
    {
-      port     = 80
-      protocol = "HTTP"
+      port             = 80
+      protocol         = "HTTP"
     target_group_index = 0
   }
    ] 
