@@ -50,7 +50,7 @@ module "autoscaling" {
   instance_type = var.instance_type
 }
 
-module "blog" {
+module "blog_alb" {
   source = "terraform-aws-modules/alb/aws"
 
   name    = "blog-alb"
@@ -62,7 +62,7 @@ module "blog" {
   security_groups = [module.blog_sg.security_group_id]
 }
 
-module "blog_alb" {
+module "blog_sg" {
   source  = "terraform-aws-modules/security-group/aws"
   version = "5.1.2"
   name = "blog"
