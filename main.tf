@@ -62,7 +62,7 @@ module "alb" {
   security_groups = [module.blog_sg.security_group_id]
 }
 
-module "blog_sg" {
+module "blog_alb" {
   source  = "terraform-aws-modules/security-group/aws"
   version = "5.1.2"
   name = "blog"
